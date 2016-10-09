@@ -1,0 +1,7 @@
+:root{
+    --color-primary: #20a0ff;
+
+    --link-color: #475669;
+    --link-hover-color: var(--color-primary);
+
+}
