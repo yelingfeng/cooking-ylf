@@ -3,7 +3,7 @@
         <div class="header-wapper">
             <header class="header header-fixed">
                 <div class="container">
-                    <h1><a href="javascript:;">cooking demo</a></h1>
+                    <h1><a href="javascript:;">demo</a></h1>
                     <ul class="nav">
                         <li class="nav-item" v-for="item in itemData">
                             <router-link activeClass="active" :to="'/'+ item.link + '/' " tag="a">
@@ -52,10 +52,14 @@
         font-family: 'Helvetica Neue', Helvetica, 'Microsoft YaHei', SimSun, sans-serif;
         overflow: auto;
         font-weight: 400;
+        font-size: 14px;
+        background: url("./assets/images/mainBG1.jpg") no-repeat;
+        background-size: cover;
     }
 
     #app {
         height: 100%;
+        overflow: hidden;
     }
     a {
         color: var(--link-color);

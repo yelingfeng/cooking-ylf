@@ -9,17 +9,6 @@ import { sync } from 'vuex-router-sync'
 
 sync(store, router)
 
-if (process.env.NODE_ENV !== 'production') {
-    console.log = (function(log) {
-        return function(obj) {
-            log.call(console, JSON.parse(JSON.stringify(obj)));
-        }
-    })(console.log);
-} else {
-    console.log = function() {}
-}
-
-
 new Vue({
     store,
     router,

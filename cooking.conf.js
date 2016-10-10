@@ -38,10 +38,31 @@ const config = {
         src: path.resolve(__dirname, './src'),
         components: path.resolve(__dirname, './src/components'),
         views: path.resolve(__dirname, './src/views'),
-    }
+    },
+
+    postcss: [
+        require('postcss-salad')({
+            browser: ['ie > 9', 'last 2 version'],
+            features: {
+                'bem': {
+                    'shortcuts': {
+                        'component': 'b',
+                        'modifier': 'm',
+                        'descendent': 'e'
+                    },
+                    'separators': {
+                        'descendent': '__',
+                        'modifier': '--'
+                    }
+                }
+            }
+        })
+    ],
 }
 
 cooking.set(config)
+
+
 
 if (process.env.NODE_ENV === 'production') {
     cooking.add('output.filename', '[hash:7].[name].js')
